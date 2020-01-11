@@ -2,8 +2,8 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8 blog-main">
-          <h3 class="py-4 mb-1  ">
+        <div class="col-md-8">
+          <h3 class="py-4 mb-1  blog-main  ">
            Home Page
           </h3>
 

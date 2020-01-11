@@ -2,14 +2,14 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8 blog-main">
+        <div class="col-md-8 ">
         
   
          <?php if(have_posts()) : ?>
             <?php while(have_posts()) : the_post(); ?>
                 <div data-aos="fade-right" class="blog-post border-0">
                
-                <h2 class="blog-post-title py-3 text-danger">
+                <h2 class="blog-post-title py-3 blog-main text-danger">
                         
                             <?php the_title(); ?>
                         

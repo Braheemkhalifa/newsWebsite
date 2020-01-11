@@ -1,3 +1,14 @@
+// js function to chang navbar bg with scroll
+
+$(function() {
+  $(document).scroll(function() {
+    var $nav = $(".navbar-dark");
+    $nav.toggleClass("fixed-top", $(this).scrollTop() > 170);
+  });
+});
+
+// js function to egypt news slider
+
 $(document).ready(function() {
   var itemsMainDiv = ".MultiCarousel";
   var itemsDiv = ".MultiCarousel-inner";
@@ -37,8 +48,8 @@ $(document).ready(function() {
         .attr("id", "MultiCarousel" + id);
 
       if (bodyWidth >= 1200) {
-        incno = itemsSplit[1];
-        itemWidth = sampwidth / incno;
+        incno = itemsSplit[3];
+        itemWidth = (sampwidth + 500) / incno;
       } else if (bodyWidth >= 992) {
         incno = itemsSplit[2];
         itemWidth = sampwidth / incno;

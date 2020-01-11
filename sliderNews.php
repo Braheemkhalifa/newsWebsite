@@ -10,18 +10,9 @@
                                         <a href="<?php the_permalink(); ?>" class="card  p-0 text-white " >
                                           <img  src="<?php  echo the_post_thumbnail_url($size = 'post-thumbnail'); ?>" class="card-img" alt="..." />
                                           <div class="card-img-overlay">
-                                          <h5 class="card-title">
-                                              <span class="bg-danger p-2">
-                                              <?php  $categories = get_the_category();
-                  
-                                                      if ( ! empty( $categories ) ) {
-                                                          echo esc_html( $categories[0]->name );   
-                                                      };?>    
-                                              </span>
-                                          </h5>
-                                          <p class="card-text">
-                                              <?php the_title(); ?>
-                                          </p>
+                                            <p class="card-text">
+                                                <?php the_title(); ?>
+                                            </p>
                                           </div>
                                     </a>
                                   </div>
@@ -30,8 +21,12 @@
 
             
              </div>
-            <button class="btn btn-primary leftLst"><</button>
-            <button class="btn btn-primary rightLst">></button>
+            <button class="btn  leftLst">
+            <i class="fa fa-chevron-left fa-2x"></i>
+            </button>
+            <button class="btn  rightLst">
+                        <i class="fa fa-chevron-right fa-2x"></i>
+            </button>
         </div>
 
 

@@ -2,7 +2,7 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8 blog-main">
+        <div class="col-md-8 ">
  
  
         <!-- start of.blog-main -->

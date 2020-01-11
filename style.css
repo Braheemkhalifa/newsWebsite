@@ -153,10 +153,25 @@ h6 {
 }
 
 /* my css */
-.navbar-color {
-  border-bottom: 1px solid var(--color2);
-  background-color: rgba(0, 77, 152, 0.2);
+.bg-dark {
+  background-color: black !important;
 }
+
+/* nav Bar */
+.searchBtn {
+  position: relative;
+  border-radius: 13px;
+  background-color: tomato;
+}
+
+.searchBtn i {
+  position: absolute;
+  padding: 10px;
+  right: 0px;
+  z-index: 5;
+  border: none;
+}
+
 .navbar-color .container a {
   color: var(--colorWhite);
 }
@@ -227,6 +242,9 @@ h6 {
 
 .feateursNews img {
   height: 350px;
+}
+.feateurs a {
+  overflow: hidden;
 }
 
 .feateursNews img:hover {
@@ -555,12 +573,11 @@ ul.page-numbers li {
 
 /* egyptNews ------------------------------------ */
 .egyptNews a {
-  height: 270px;
-  background-color: red;
+  height: 240px;
 }
 
 .egyptNews a img {
-  height: 260px;
+  height: 240px;
   background-color: red;
 }
 
@@ -569,24 +586,43 @@ ul.page-numbers li {
   overflow: hidden;
   width: 100%;
   position: relative;
-  height: 290px;
+  height: 260px;
+  padding: 0px;
 }
 .MultiCarousel .MultiCarousel-inner {
   transition: 1s ease all;
   float: left;
 }
+.MultiCarousel::before,
+.MultiCarousel::after {
+  background: linear-gradient(to right, black 0%, rgba(255, 255, 255, 0) 100%);
+  content: "      ";
+  height: 240px;
+  position: absolute;
+  width: 60px !important;
+  z-index: 2;
+  margin: 8px 0px;
+}
+
+.MultiCarousel::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+.MultiCarousel::before {
+  left: 0;
+  top: 0;
+}
+
 .MultiCarousel .MultiCarousel-inner .item {
   float: left;
 }
 .MultiCarousel .MultiCarousel-inner .item > a {
-  padding: 10px;
-  margin: 0px 10px;
-  border-radius: 7px;
+  padding: 10px 0px;
+  margin: 0px 1.5px;
+  border-radius: 1px;
   overflow: hidden;
-}
-
-.MultiCarousel .MultiCarousel-inner .item > a > img {
-  border-radius: 7px;
 }
 
 .MultiCarousel .leftLst,
@@ -596,12 +632,16 @@ ul.page-numbers li {
   top: calc(50% - 20px);
   background: #dc3545;
   border: 1px solid black;
+  z-index: 5;
+  color: white;
 }
 .MultiCarousel .leftLst {
-  left: 0;
+  left: -11px;
+  padding: 11px 3px 7px 9px;
 }
 .MultiCarousel .rightLst {
-  right: 0;
+  right: -11px;
+  padding: 11px 9px 7px 3px;
 }
 
 .MultiCarousel .leftLst.over,
@@ -610,4 +650,90 @@ ul.page-numbers li {
   background: #dc3545;
   border: 1px solid black;
   opacity: 0.7;
+}
+
+/* footer */
+.blog-footer {
+  border-top: #dc3545 3px solid;
+}
+
+.blog-footer h3 span {
+  position: relative;
+}
+
+.blog-footer .about {
+  text-align: left;
+}
+.blog-footer h3 span::after {
+  content: "";
+  width: 70%;
+  height: 3px;
+  background-color: #dc3545;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  z-index: 1;
+}
+.socialCol {
+  padding-top: 25px;
+}
+.socialCol ul a {
+  list-style-type: none;
+  background-color: #dc3545;
+  height: 50px;
+  width: 50px;
+  margin: 7px 7px;
+  font-size: 31px;
+  display: inline-block;
+  border-radius: 50%;
+  color: white;
+}
+
+.socialCol ul a:hover {
+  background-color: white;
+  color: #dc3545;
+  transform: translateX(10px);
+  transition: all 0.5s ease-in-out;
+}
+.findUsCol {
+  text-align: left;
+  padding: 0px;
+}
+
+.findUsCol div,
+.findUsCol div a {
+  color: white;
+  margin: 10px 3px;
+  text-transform: capitalize;
+  font-size: 21px;
+}
+
+.findUsCol div:hover,
+.findUsCol div a:hover {
+  text-decoration: underline #dc3545 1px;
+}
+
+.findUsCol div i {
+  font-size: 31px;
+  margin: 3px 5px;
+  color: #dc3545;
+  padding: 5px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+}
+.footerMenu ul li {
+  display: inline-block !important;
+  list-style-type: square;
+}
+.footerMenu ul li a {
+  padding: 3px 5px;
+  margin: 3px 7px;
+  text-transform: capitalize;
+  color: #999;
+}
+
+.footerMenu ul li a:hover {
+  text-decoration: underline #dc3545 1px;
+  transform: translateY(-5px);
 }

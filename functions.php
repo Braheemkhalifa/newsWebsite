@@ -5,7 +5,8 @@
  * Register Custom Navigation Walker
  */
 function register_navwalker(){
-	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    
 }
 
 //theme support
@@ -13,11 +14,13 @@ function wp_theme_setup(){
 add_theme_support('post-thumbnails');
 register_nav_menus( array(
     'primary' => __( 'Primary Menu' ),
+    'footer' => __( 'Footer Menu' )
 ) );
 }
 
 add_action( 'after_setup_theme', 'register_navwalker' );
 add_action( 'after_setup_theme','wp_theme_setup');
+
 
 /**
  * Filter the except length to 20 words.
@@ -184,3 +187,8 @@ add_action( 'save_post', 'sm_meta_save' );
 
 add_action( 'save_post',  'mm_meta_save' );
 
+
+
+// customize footer
+
+require get_template_directory().'/inc/customizer.php';

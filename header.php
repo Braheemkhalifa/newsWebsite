@@ -6,11 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="<?php bloginfo('description') ?>" />
+    <meta name="description" content="<?php echo get_theme_mod('Footer_description','About Your site')  && bloginfo('description')  ?> " />
     <title>
         <?php bloginfo('name') ?> |
         <?php is_front_page() ? bloginfo('description') : wp_title(); ?>
-        
     </title>
 
     <!-- Bootstrap core CSS -->
@@ -40,10 +39,10 @@
 
   <body>
     <div class="container ">
-       <header class="blog-header py-3">
+       <header class="blog-header ">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-12 text-center">
-            <a class="blog-header-logo text-dark" href="#">
+            <a class="blog-header-logo text-dark" href="<?php echo get_home_url(); ?>">
               <?php bloginfo('name') ?>
              </a>
             <p class="text-danger my-3 text-capitalize">        
@@ -51,35 +50,43 @@
             </p>
           </div>
         </div>
-      </header>
+      </header> 
 
-        <nav class="navbar navbar-expand-md text-uppercase navbar-light bg-light text-center" role="navigation">
-           <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                 <button class="navbar-toggler ml-auto   " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="navbar-nav m-auto">
-                            <?php
-                            wp_nav_menu( array(
-                                'theme_location'    => 'primary',
-                                'depth'             => 2,
-                                'container'         => 'li',
-                                'container_class'   => 'collapse navbar-collapse',
-                                'container_id'      => 'bs-example-navbar-collapse-1',
-                                'menu_class'        => 'nav navbar-nav',
-                                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                                'walker'            => new WP_Bootstrap_Navwalker(),
-                            ) );
-                            ?>
-                            
-            
-                    </ul>
-           
-                 </div>
-           </div>
-        </nav>
+
+        <nav  class="navbar navbar-expand-md text-uppercase navbar-dark  bg-dark text-center" role="navigation">
+                <a class="navbar-brand"  href="<?php echo get_home_url(); ?>">
+                  <img src="<?php echo get_site_icon_url(); ?>" width="30" height="30" alt=" no ">
+                </a>
+                  <button class="navbar-toggler  text-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon "></span>
+                  </button>
+              
         
+                <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav m-auto">
+                                  <?php
+                                  wp_nav_menu( array(
+                                      'theme_location'    => 'primary',
+                                      'depth'             => 2,
+                                      'container'         => 'li',
+                                      'container_id'      => 'bs-example-navbar-collapse-1',
+                                      'menu_class'        => 'nav navbar-nav',
+                                      'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                                      'walker'            => new WP_Bootstrap_Navwalker(),
+                                  ) );
+                                  ?>
+                                  
+                  
+                          </ul>
+                              <?php get_template_part('searchform'); ?>
+
+                      </div>
+                </div>
+
+
+        </nav>
+
     
     </div>

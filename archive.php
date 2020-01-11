@@ -2,9 +2,9 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8 blog-main">
+        <div class="col-md-8 ">
           
-          <?php the_archive_title( '<h3 class="py-4 mb-1  ">', '</h3>' ); ?>
+          <?php the_archive_title( '<h3 class="py-4 mb-1  blog-main">', '</h3>' ); ?>
 
           <!-- /.blog-post -->  
          <?php if(have_posts()) : ?>
